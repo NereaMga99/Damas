@@ -15,5 +15,10 @@ public enum Direccion {
     Direccion(String cadenaAMostrar) {
         this.cadenaAMostrar = cadenaAMostrar;
     }
+
+    // Ponemos el método toString que devuelve la representación en cadena.
+    public String toString() {
+        return cadenaAMostrar;
+    }
 }
 
