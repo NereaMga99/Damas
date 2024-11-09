@@ -7,4 +7,9 @@ public enum Color {
 
     // Creamos el atributo cadenaAMostrar.
     private final String cadenaAMostrar;
+
+    // Creo el constructor que inicializa el atributo.
+    Color (String cadenaAMostrar) {
+        this.cadenaAMostrar = cadenaAMostrar;
+    }
 }
