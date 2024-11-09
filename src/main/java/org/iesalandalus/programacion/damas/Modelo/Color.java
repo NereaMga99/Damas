@@ -12,4 +12,9 @@ public enum Color {
     Color (String cadenaAMostrar) {
         this.cadenaAMostrar = cadenaAMostrar;
     }
+
+    // Se pone el método toString que devuelve la representación en forma de cadena del literal.
+    public String toString() {
+        return cadenaAMostrar;
+    }
 }
