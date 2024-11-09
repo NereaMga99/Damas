@@ -8,6 +8,8 @@ public enum Direccion {
     SUROESTE("Suroeste"),
     NOROESTE("Noroeste");
 
+    // Creamos el atributo de cadenaAMostrar.
+    private final String cadenaAMostrar;
 
 }
 
