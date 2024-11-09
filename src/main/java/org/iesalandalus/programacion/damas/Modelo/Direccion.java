@@ -11,5 +11,9 @@ public enum Direccion {
     // Creamos el atributo de cadenaAMostrar.
     private final String cadenaAMostrar;
 
+    // Este es el constructor que inicializa el atributo.
+    Direccion(String cadenaAMostrar) {
+        this.cadenaAMostrar = cadenaAMostrar;
+    }
 }
 
