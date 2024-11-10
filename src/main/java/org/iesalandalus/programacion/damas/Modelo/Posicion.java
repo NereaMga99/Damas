@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.damas.Modelo;
 
+import java.util.Objects;
+
 public class Posicion {
 
     // Creacion de los atributos, los ponemos privados para controlar el acceso y que esté más restringido.
@@ -47,4 +49,15 @@ public class Posicion {
         this.columna = columna;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Posicion otraPosicion)) return false;
+        return fila == otraPosicion.fila && columna == otraPosicion.columna;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fila, columna);
+    }
 }
