@@ -8,8 +8,11 @@ public class Posicion {
 
     // Creamos el constructor y llamamos al método set con los valores Fila y Columna.
     public Posicion(int fila, char columna) {
-        setFila(fila);
-        setColumna(columna);
+        setFila(fila); /* Aquí llamamos al setter de Fila y dentro del Setter comprueba el valor,
+                          en el caso de que salga erróneo saltará la excepción */
+
+        setColumna(columna); /* Aquí llamamos al setter de Columna y dentro del Setter comprueba el valor,
+                          en el caso de que salga erróneo saltará la excepción */
     }
 
     // Creamos el método getter para devolver el valor
@@ -37,4 +40,5 @@ public class Posicion {
         }
         this.columna = columna;
     }
+
 }
