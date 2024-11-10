@@ -15,6 +15,12 @@ public class Posicion {
                           en el caso de que salga erróneo saltará la excepción */
     }
 
+    // Creación del constructor copia.
+    public Posicion(Posicion otraPosicion) {
+        setFila(otraPosicion.getFila());
+        setColumna(otraPosicion.getColumna());
+    }
+
     // Creamos el método getter para devolver el valor
     public int getFila() {
         return fila;
