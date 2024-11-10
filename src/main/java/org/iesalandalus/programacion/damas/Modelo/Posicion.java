@@ -18,9 +18,9 @@ public class Posicion {
     }
 
     // Creación del constructor copia.
-    public Posicion(Posicion otraPosicion) {
-        setFila(otraPosicion.getFila());
-        setColumna(otraPosicion.getColumna());
+    public Posicion(Posicion posicion) {
+        setFila(posicion.getFila());
+        setColumna(posicion.getColumna());
     }
 
     // Creamos el método getter para devolver el valor
@@ -53,8 +53,8 @@ public class Posicion {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Posicion otraPosicion)) return false;
-        return fila == otraPosicion.fila && columna == otraPosicion.columna;
+        if (!(o instanceof Posicion posicion)) return false;
+        return fila == posicion.fila && columna == posicion.columna;
     }
 
     // Ponemos el método hashCode.
