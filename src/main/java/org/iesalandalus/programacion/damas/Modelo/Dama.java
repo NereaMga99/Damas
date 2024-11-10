@@ -9,7 +9,14 @@ public class Dama {
     // Creamos el constructor por defecto.
     public Dama() {
         this.color = Color.BLANCO;
-        this.posicion = generarPosicionInicial();
+        this.posicion = crearPosicionInicial(Color.BLANCO);
+        this.esDamaEspecial = false;
+    }
+
+    // Creamos el constructor que acepta el parámetro Color.
+    public Dama(Color color) {
+        setColor(color);
+        this.posicion = crearPosicionInicial(color);
         this.esDamaEspecial = false;
     }
 
@@ -50,9 +57,16 @@ public class Dama {
     }
 
     // Se crea el método para la posición incial de la Dama.
-    private Posicion generarPosicionInicial() {
-        int fila = (int) (Math.random() * 3) + 1; // Esta es la fila aleatoria que irá entre el 1 y el 3.
+    private Posicion crearPosicionInicial(Color color) {
+        int fila;
         char columna;
+
+        //Aqui establecemos el número de fila que tienen que ir las Damas blancas y negras.
+        if (color == Color.BLANCO) {
+            fila = (int) (Math.random() * 3) + 1;
+        } else {
+            fila = (int) (Math.random() * 3) + 6;
+        }
 
         // Se comprueba si la fila es par o impar.
         if (fila % 2 == 1) { // Si es impar se crea un Array con las columnas b, d, f, h y entre esas se selecciona 1 aleatorialmente.
