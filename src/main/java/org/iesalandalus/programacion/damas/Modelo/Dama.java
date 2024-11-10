@@ -6,6 +6,13 @@ public class Dama {
     private Posicion posicion;
     private boolean esDamaEspecial;
 
+    // Creamos el constructor por defecto.
+    public Dama() {
+        this.color = Color.BLANCO;
+        this.posicion = generarPosicionInicial();
+        this.esDamaEspecial = false;
+    }
+
     // Se crea el método Getter para que devuelva el valor de Color.
     public Color getColor() {
         return color;
@@ -40,5 +47,23 @@ public class Dama {
     // Creamos el Setter de DamaEspecial.
     public void setEsDamaEspecial(boolean esDamaEspecial) {
         this.esDamaEspecial = esDamaEspecial;
+    }
+
+    // Se crea el método para la posición incial de la Dama.
+    private Posicion generarPosicionInicial() {
+        int fila = (int) (Math.random() * 3) + 1; // Esta es la fila aleatoria que irá entre el 1 y el 3.
+        char columna;
+
+        // Se comprueba si la fila es par o impar.
+        if (fila % 2 == 1) { // Si es impar se crea un Array con las columnas b, d, f, h y entre esas se selecciona 1 aleatorialmente.
+            char[] columnasNegras = {'b', 'd', 'f', 'h'};
+            columna = columnasNegras[(int) (Math.random() * columnasNegras.length)];
+
+        } else { // Si es par se crea un Array con las columnas a, c, e, g y entre esas se selecciona 1 aleatorialmente.
+            char[] columnasNegras = {'a', 'c', 'e', 'g'};
+            columna = columnasNegras[(int) (Math.random() * columnasNegras.length)];
+        }
+
+        return new Posicion(fila, columna);
     }
 }
