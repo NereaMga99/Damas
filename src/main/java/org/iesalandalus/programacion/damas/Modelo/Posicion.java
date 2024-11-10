@@ -41,7 +41,7 @@ public class Posicion {
         return columna;
     }
 
-    //Creamos el setter y comprobamos de que el carácter de Columna sea entre A y H
+    //Creamos el setter y comprobamos de que el carácter de Columna sea entre A y H.
     public void setColumna(char columna) {
         if (columna < 'a' || columna > 'h') {
             throw new IllegalArgumentException("Error, la Columna debe estar entre la A y la H");
@@ -49,6 +49,7 @@ public class Posicion {
         this.columna = columna;
     }
 
+    // Método equals.
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -56,8 +57,15 @@ public class Posicion {
         return fila == otraPosicion.fila && columna == otraPosicion.columna;
     }
 
+    // Ponemos el método hashCode.
     @Override
     public int hashCode() {
         return Objects.hash(fila, columna);
+    }
+
+    // Método toString que devolverá la Fila y la Columna.
+    @Override
+    public String toString() {
+        return "fila=" + fila + ", columna=" + columna;
     }
 }
