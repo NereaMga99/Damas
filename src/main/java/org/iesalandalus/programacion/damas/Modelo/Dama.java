@@ -32,8 +32,8 @@ public class Dama {
         this.posicion = posicion;
     }
 
-    // Aquí creamos el Getter de DamaEspecial.
-    public boolean getEsDamaEspecial() {
+    // Aquí creamos el Getter de DamaEspecial (se pone el is para atributos Booleanos).
+    public boolean isEsDamaEspecial() {
         return esDamaEspecial;
     }
 
