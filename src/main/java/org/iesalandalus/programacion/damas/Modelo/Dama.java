@@ -105,7 +105,7 @@ public class Dama {
             }
         }
 
-        // En esta parte ponemos la cantidad de pasos que se moverá la Dama.
+        // En esta parte ponemos la cantidad de pasos que se moverá la Dama
         for (int i = 0; i < pasos; i++) {
             int nuevaFila = posicion.getFila();
             char nuevaColumna = posicion.getColumna();
