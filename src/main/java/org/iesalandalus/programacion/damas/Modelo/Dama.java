@@ -144,5 +144,9 @@ public class Dama {
         }
     }
 
-
+    // Se crea el método toString para representar el color y la posición de la Dama.
+    @Override
+    public String toString() {
+        return "color=" + color + ", posición=" + posicion;
+    }
 }
