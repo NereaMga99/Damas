@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.damas.Modelo;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Dama {
     // Definimos los atributos de la clase Dama.
     private Color color;
@@ -80,4 +82,67 @@ public class Dama {
 
         return new Posicion(fila, columna);
     }
+
+    // Creamos el método mover para que acepte como parámetros una Direccion y el número de pasos que se moverá.
+    public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException {
+        if (direccion == null) {
+            throw new NullPointerException("ERROR: La dirección no puede ser nula.");
+        }
+        if (pasos < 1) {
+            throw new IllegalArgumentException("Error, los pasos no pueden ser menores que uno.");
+        }
+
+        /* Aqui se comprueba que no es Dama especial y especificamos que el paso sea únicamente 1 y
+        la direccion de la Dama Blanca sea Noreste o Noroeste y la negra Sureste o Suroeste. */
+        if (!esDamaEspecial) {
+            pasos= 1;
+
+            if (color == Color.BLANCO && (direccion != Direccion.NORESTE && direccion != Direccion.NOROESTE)) {
+                throw new OperationNotSupportedException("Error, la dama blanca solo puede moverse en noreste o noroeste.");
+            }
+            if (color == Color.NEGRO && (direccion != Direccion.SURESTE && direccion != Direccion.SUROESTE)) {
+                throw new OperationNotSupportedException("Error, la dama negra solo puede moverse en sureste o suroeste");
+            }
+        }
+
+        // En esta parte ponemos la cantidad de pasos que se moverá la Dama.
+        for (int i = 0; i < pasos; i++) {
+            int nuevaFila = posicion.getFila();
+            char nuevaColumna = posicion.getColumna();
+
+            switch (direccion) {
+                case NORESTE:
+                    nuevaFila -= 1;
+                    nuevaColumna += 1;
+                    break;
+                case NOROESTE:
+                    nuevaFila -= 1;
+                    nuevaColumna -= 1;
+                    break;
+                case SURESTE:
+                    nuevaFila += 1;
+                    nuevaColumna += 1;
+                    break;
+                case SUROESTE:
+                    nuevaFila += 1;
+                    nuevaColumna -= 1;
+                    break;
+            }
+
+            // Aqui ponemos la validación para que la dama no pueda salir del tablero.
+            if (nuevaFila < 1 || nuevaFila > 8 || nuevaColumna < 'a' || nuevaColumna > 'h') {
+                throw new OperationNotSupportedException("ERROR: Movimiento fuera del tablero.");
+            }
+
+            // Actualizamos la posición con la nueva fila y columna.
+            posicion = new Posicion(nuevaFila, nuevaColumna);
+        }
+
+        // Aqui se convierte la Dama en Dama especial si consigue llegar al final del tablero.
+        if ((color == Color.BLANCO && posicion.getFila() == 8) || (color == Color.NEGRO && posicion.getFila() == 1)) {
+            esDamaEspecial = true;
+        }
+    }
+
+
 }
