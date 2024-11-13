@@ -3,6 +3,7 @@ package org.iesalandalus.programacion.damas;
 import org.iesalandalus.programacion.damas.Modelo.Color;
 import org.iesalandalus.programacion.damas.Modelo.Direccion;
 import org.iesalandalus.programacion.utilidades.Entrada;
+import org.w3c.dom.ls.LSOutput;
 
 public class Consola {
     private Consola () {
@@ -81,5 +82,10 @@ public class Consola {
             pasosDama = Entrada.entero();
         } while (pasosDama < 1);
         return pasosDama;
+    }
+
+    // Creamos el método despedirse.
+    public static void despedirse() {
+        System.out.println("Game Over :)");
     }
 }
