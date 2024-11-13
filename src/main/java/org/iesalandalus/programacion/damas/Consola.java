@@ -41,4 +41,13 @@ public class Consola {
             return Color.NEGRO;
         }
     }
+
+    // Creamos el método mostrarMenuDirecciones.
+    public static void mostrarMenuDirecciones() {
+        System.out.println("----------Menú de direcciones----------");
+        System.out.println("1. Noreste");
+        System.out.println("2. Sureste");
+        System.out.println("3. Suroeste");
+        System.out.println("4. Noroeste");
+    }
 }
