@@ -72,4 +72,14 @@ public class Consola {
                 return null;
         }
     }
+
+    // Creamos el método elegirPasos.
+    public static int elegirPasos() {
+        int pasosDama;
+        do {
+            System.out.println("Introduce la cantidad de pasos de la Dama: ");
+            pasosDama = Entrada.entero();
+        } while (pasosDama < 1);
+        return pasosDama;
+    }
 }
