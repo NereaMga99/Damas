@@ -1,6 +1,7 @@
 package org.iesalandalus.programacion.damas;
 
 import org.iesalandalus.programacion.damas.Modelo.Color;
+import org.iesalandalus.programacion.damas.Modelo.Direccion;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
@@ -49,5 +50,26 @@ public class Consola {
         System.out.println("2. Sureste");
         System.out.println("3. Suroeste");
         System.out.println("4. Noroeste");
+    }
+
+    // Creamos el método elegirDireccion.
+    public static Direccion elegirDireccion() {
+        int direccionDama;
+        do {
+            System.out.println("Elije una direccion para mover la Dama: ");
+            direccionDama = Entrada.entero();
+        } while (direccionDama < 1 || direccionDama > 4);
+        switch (direccionDama ) {
+            case 1:
+                return Direccion.NORESTE;
+            case 2:
+                return Direccion.SURESTE;
+            case 3:
+                return Direccion.SUROESTE;
+            case 4:
+                return Direccion.NOROESTE;
+            default:
+                return null;
+        }
     }
 }
