@@ -16,7 +16,7 @@ public class MainApp {
     public static void ejecutarOpcion(int opcion) {
         switch (opcion) {
             case 1:
-                crearDamaPorDefecto();
+                crearDamaDefecto();
                 break;
             case 2:
                 crearDamaColor();
@@ -28,5 +28,10 @@ public class MainApp {
                 Consola.despedirse();
                 break;
         }
+    }
+
+    // Creamos el método crearDamaDefecto.
+    public static void crearDamaDefecto() {
+        dama = new Dama();
     }
 }
