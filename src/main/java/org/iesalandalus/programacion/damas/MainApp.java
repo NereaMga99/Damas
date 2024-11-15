@@ -30,8 +30,14 @@ public class MainApp {
         }
     }
 
-    // Creamos el método crearDamaDefecto.
+    // Creamos el método crearDamaPorDefecto.
     public static void crearDamaDefecto() {
         dama = new Dama();
+    }
+
+    // Creamos el método crearDamaColor.
+    public static void crearDamaColor() {
+        Color colorDama = Consola.elegirOpcion();
+        dama = new Dama(colorDama);
     }
 }
