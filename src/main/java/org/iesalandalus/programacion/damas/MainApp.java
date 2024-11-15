@@ -12,6 +12,24 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 public class MainApp {
     private static Dama dama;
 
+// Creamos el método main.
+public static void main(String[] args) {
+    int opcion;
+
+    do {
+        // Ponemos la opción de mostrar el menú principal
+        Consola.mostrarMenu();
+        opcion = Consola.elegirOpcionMenu();
+
+        // Una vez seleccionada la opcion la ejecutamos.
+        ejecutarOpcion(opcion);
+
+        // Mostramos la información de la Dama
+        mostrarDama();
+    } while (opcion != 4);
+    System.out.println("Gracias por jugar :) ¡Espero verte de nuevo!");
+}
+
 // Se crea el método ejecutarOpcion para que pase como parámetro la opción que elija el usuario.
     public static void ejecutarOpcion(int opcion) {
         switch (opcion) {
