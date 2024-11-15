@@ -19,6 +19,9 @@ public class Posicion {
 
     // Creación del constructor copia.
     public Posicion(Posicion posicion) {
+        if (posicion == null) {
+            throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
+        }
         setFila(posicion.getFila());
         setColumna(posicion.getColumna());
     }
@@ -31,7 +34,7 @@ public class Posicion {
     // Creamos el setter y comprobamos de que el número de Fila sea entre 1 y 8.
     public void setFila(int fila) {
         if (fila < 1 || fila > 8) {
-            throw new IllegalArgumentException("Error, la Fila debe estar entre 1 y 8");
+            throw new IllegalArgumentException("ERROR: Fila no válida.");
         }
         this.fila = fila; // En caso de que no de el error anterior, se modifica el valor de la fila.
     }
@@ -44,7 +47,7 @@ public class Posicion {
     //Creamos el setter y comprobamos de que el carácter de Columna sea entre A y H.
     public void setColumna(char columna) {
         if (columna < 'a' || columna > 'h') {
-            throw new IllegalArgumentException("Error, la Columna debe estar entre la A y la H");
+            throw new IllegalArgumentException("ERROR: Columna no válida.");
         }
         this.columna = columna;
     }
