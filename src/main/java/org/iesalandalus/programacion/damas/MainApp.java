@@ -61,4 +61,14 @@ public class MainApp {
             System.out.println("Error: " + e.getMessage());
         }
     }
+
+    // Creamos el método mostrarDama para ver su información (color y posición).
+    public static void mostrarDama() {
+        if (dama == null) {
+            System.out.println("No hay ninguna Dama creada.");
+        } else {
+            System.out.println("-----Información de la Dama-----");
+            System.out.println(dama.toString());
+        }
+    }
 }
