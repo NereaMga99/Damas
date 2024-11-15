@@ -40,4 +40,25 @@ public class MainApp {
         Color colorDama = Consola.elegirOpcion();
         dama = new Dama(colorDama);
     }
+
+    // Creamos el método mover.
+    public static void mover() {
+        Consola.mostrarMenuDirecciones();
+
+        try {
+            Direccion direccion = Consola.elegirDireccion();
+            int moverPasos;
+            // Verificamos que la Dama es especial y si es Dama normal que mueva solo 1 paso.
+            if (dama.isEsDamaEspecial()) {
+                System.out.println("Eres una dama especial. ¿Hacia donde quieres mover?");
+                moverPasos = Entrada.entero();
+                dama.mover(Consola.elegirDireccion(), moverPasos);
+            } else {
+                moverPasos = 1;
+            }
+            // Aquí muestra cualquier tipo de error que cometa el programa.
+        } catch (OperationNotSupportedException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
 }
